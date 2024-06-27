@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>INDEX</title>
+    </head>
+    <body>
+        <h1>Welcome</h1>
+        <%=nom %>
+        <%=age %>
+        <%=personnes.length %>
+        <
+
+        <%
+        for(i=0; i<personnes.length; i++){
+            %>
+           <h1> <%=personnes[i].nom %> </h1>
+           <h5><%=personnes[i].age %> </h5>
+            <%
+        }
+        %>
+
+
+        <form method="post" action="/users/envoie-form">
+        Matricule    <input type="text" name="matricule" /> <br>
+        Tel <input type="number" name="tel" />
+        <input type="submit" value="Envoyer">
+         </form>
+    </body>
+</html>

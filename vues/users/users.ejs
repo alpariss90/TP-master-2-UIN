@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>USERS</title>
+    </head>
+    <body>
+      <%=message %>
+      <p>WELCOME</p>
+      <div>
+        <form method="post" action="/users/save-region">
+          <label>CODE</label>
+          <input type="text" name="code"><br>
+          <label>LIBELLE</label>
+          <input type="text" name="libelle"><br>
+          <input type="submit" value="Envoyer" />
+        </form>
+      </div>
+
+      <div>
+        <form method="post" action="/users/save-users">
+          <label>EMAIL</label>
+          <input type="email" name="mail"><br>
+          <label>Nom & prenom</label>
+          <input type="text" name="nom_prenom"><br>
+          <label>Age</label>
+          <input type="number" name="age"><br>
+          <label>Region</label>
+          <select name="region">
+            <option value="">Choisir une region</option>
+            <% for(i=0; i<regions.length; i++){ %>
+              <option value="<%=regions[i].code %>"><%=regions[i].libelle %></option>
+              <% } %>
+          </select>
+          <input type="submit" value="Envoyer" />
+        </form>
+      </div>
+    </body>
+</html>
